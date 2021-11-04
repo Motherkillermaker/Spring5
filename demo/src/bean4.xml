@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+
+<!--    &lt;!&ndash;级联赋值(外部注入)&ndash;&gt;-->
+<!--    <bean id="emp" class="spring5.employee">-->
+<!--        &lt;!&ndash;设置两个普通属性&ndash;&gt;-->
+<!--        <property name="ename" value="lucy"></property>-->
+<!--        <property name="gender" value="女"></property>-->
+
+<!--        &lt;!&ndash;级联赋值&ndash;&gt;-->
+<!--        <property name="dept" ref="dept"></property>-->
+<!--    </bean >-->
+
+<!--    <bean id="dept" class="spring5.Department">-->
+<!--        <property name="dname" value="财务部"></property>-->
+<!--    </bean>-->
+
+
+
+    <!--级联赋值-->
+    <bean id="emp" class="spring5.employee">
+        <!--设置两个普通属性-->
+        <property name="ename" value="lucy"></property>
+        <property name="gender" value="女"></property>
+
+        <!--级联赋值-->
+        <property name="dept" ref="dept"></property>
+        <property name="dept.dname" value="技术部"></property>
+    </bean >
+
+    <bean id="dept" class="spring5.Department">
+        <property name="dname" value="财务部"></property>
+    </bean>
+
+
+
+
+</beans>
